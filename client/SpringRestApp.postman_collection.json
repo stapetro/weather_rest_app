@@ -1,0 +1,173 @@
+{
+  "info": {
+    "_postman_id": "15d0dbbd-7ba0-480c-a1dd-1577f30d5cdb",
+    "name": "SpringRestApp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GetAverageTemp",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "spring",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "spring",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/temp",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "temp"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetAverageTemp_invalidLogin",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "user1",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "password",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/temp",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "temp"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ExportCsv",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "spring",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "spring",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/plain"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/temp/export",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "temp",
+            "export"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TriggerTempDataLoad",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "spring",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "spring",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/temp/trigger",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "temp",
+            "trigger"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.4.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'java'
+}
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'exercise'
+version '1.0-SNAPSHOT'
+ext {
+    springBootVersion = '2.0.4.RELEASE'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_10
+targetCompatibility = JavaVersion.VERSION_1_10
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+bootJar {
+    baseName = rootProject.name
+    version = rootProject.version
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}") // runtime?
+    compile("org.springframework.boot:spring-boot-starter-data-elasticsearch:${springBootVersion}")
+
+    compile group: 'net.sf.supercsv', name: 'super-csv', version: '2.4.0'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    runtime group: 'mysql', name: 'mysql-connector-java', version: '8.0.12'
+    testCompile ("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+//    testCompile("org.springframework.security:spring-security-test:${springBootVersion}")
+}

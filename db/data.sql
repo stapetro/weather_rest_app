@@ -1,0 +1,2 @@
+INSERT INTO `account`(username,password, role)VALUES('spring','{bcrypt}$2a$10$RpWqByYAwM5DT01VmjN8TuOosWgYaoVCQs1gkWtkfqdMb8RU6Dnvu', "USER");
+INSERT INTO `account`(username,password, role)VALUES('admin','{bcrypt}$2a$10$RpWqByYAwM5DT01VmjN8TuOosWgYaoVCQs1gkWtkfqdMb8RU6Dnvu', "ADMIN");

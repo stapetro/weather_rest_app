@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "e2da3c72-c9df-4475-95fd-b34faf7d5fb2",
+		"name": "OpenWeather",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetByCityName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?q=Sofia,bg&appid={{appId}}&units=metric",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Sofia,bg"
+						},
+						{
+							"key": "appid",
+							"value": "{{appId}}"
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
